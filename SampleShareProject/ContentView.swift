@@ -1,19 +1,19 @@
-//
-//  ContentView.swift
-//  SampleShareProject
-//
-//  Created by 村岡海人 on 2024/07/13.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            // iOS 15
+            Button {
+                let shareText = "iOS 15 or earlier shareItem"
+                ShareView.showShareScreen(item: [shareText])
+            } label: {
+                HStack {
+                    Image(systemName: "square.and.arrow.up")
+                    Text("iOS 15 or earlier")
+                }
+            }
+
         }
         .padding()
     }
